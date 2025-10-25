@@ -3,11 +3,7 @@ import { MessagesRepository } from './messages.repository';
 
 @Injectable()
 export class MessagesService {
-  messagesRepository: MessagesRepository;
-
-  constructor(messagesRepository: MessagesRepository) {
-    this.messagesRepository = messagesRepository;
-  }
+  constructor(public messagesRepository: MessagesRepository) {}
 
   findOne(id: string) {
     return this.messagesRepository.findOne(id);
